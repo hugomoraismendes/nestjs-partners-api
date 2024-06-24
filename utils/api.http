@@ -1,0 +1,12 @@
+GET http://localhost:3000/events
+
+###
+POST http://localhost:3000/events
+Content-Type: application/json
+
+{
+    "name": "Evento 1",
+    "description": "Um novo evento 1",
+    "date": "2024-06-24T00:00:00",
+    "price": 100
+}

@@ -1,0 +1,14 @@
+#subir container
+docker compose up 
+
+#conectar no container
+docker compose exec db bash
+
+#executar migration
+npx prima migrate dev
+
+#gerando modulo com o nest
+nest g module prisma
+
+#gerando service com o nest
+nest g service prisma
