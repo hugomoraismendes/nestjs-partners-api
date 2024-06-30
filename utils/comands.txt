@@ -12,3 +12,6 @@ nest g module prisma
 
 #gerando service com o nest
 nest g service prisma
+
+#gerando o resource com o nest
+nest g resource
