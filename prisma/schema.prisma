@@ -14,7 +14,7 @@ datasource db {
 }
 
 model Event {
-  id          String   @id @default(cuid())
+  id          String   @id @default(uuid())
   name        String
   description String
   date        DateTime
@@ -25,7 +25,7 @@ model Event {
 }
 
 model Spot {
-  id        String     @id @default(cuid())
+  id        String     @id @default(uuid())
   name      String
   eventId   String
   status    SpotStatus

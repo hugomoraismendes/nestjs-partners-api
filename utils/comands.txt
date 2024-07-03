@@ -5,7 +5,7 @@ docker compose up
 docker compose exec db bash
 
 #executar migration
-npx prima migrate dev
+npx prisma migrate dev
 
 #gerando modulo com o nest
 nest g module prisma
