@@ -1,6 +1,6 @@
 .PHONY: build up down start stop restart logs ps login
 
-build:
+build: network
 	docker compose build
 
 up:
@@ -15,6 +15,9 @@ login:
 setup:
 	docker compose run -w /home/node/app app /bin/bash -c "npm install"
 
-watch:
+watch: network
 	docker compose up -d
 	docker compose logs --tail=10 -f app
+
+network:
+	docker network create shared-services || true

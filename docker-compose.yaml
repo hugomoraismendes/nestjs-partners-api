@@ -1,14 +1,23 @@
-services:
+networks:
+  shared-services:
+    external: true
 
+services:
   app:
     build: .
+    restart: always
+    container_name: app
     ports:
       - 3000:3000
     volumes:
       - .:/home/node/app
+    networks:
+      - shared-services
 
   db:
     image: mysql:8.0.30-debian
+    restart: always
+    container_name: db
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: nest
@@ -16,3 +25,7 @@ services:
       - 3306:3306
     volumes:
       - ./.docker/dbdata:/var/lib/mysql
+    networks:
+      - shared-services
+    # expose:
+    #   - 3306
